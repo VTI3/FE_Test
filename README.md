@@ -55,12 +55,12 @@ https://www.figma.com/community/file/1506308429232395954
 ---
 
 ## 📂 项目结构建议（仅供参考）
-
+```bash
 src/
-├── components/
-├── data/
-├── App.tsx
-└── main.tsx
+├── components/   # 可复用组件，如 Card.tsx、CardList.tsx
+├── data/         # 模拟数据或卡片配置项
+├── App.tsx       # 主页面入口，加载 CardList
+└── main.tsx      # 应用入口
 
 ---
 
