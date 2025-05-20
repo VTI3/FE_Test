@@ -1,3 +1,5 @@
+'use client'
+
 /**
  * 接受数据
  * 使用 card 组件render
@@ -22,16 +24,19 @@ const CardList = <T,>(props: Iprops<T>) => {
     const {data} = props;
     // 获取当前窗口大小hooks
     const {width} = useWindowSize();
+    console.debug('width',width)
     if(!data?.length) return null
     
     if(isMobile(width)){
         return <MobileList data={data} type={DEVICE_TYPE.PHONE} />
     }else if(isIpad(width)){
         return <MobileList data={data} type={DEVICE_TYPE.IPAD} />
-    }else if(isPC(width)){
-        return <PCList data={data} type={DEVICE_TYPE.PC} />
     }
-    return <PCList data={data} type={DEVICE_TYPE.OVER_PC} />
+    return null
+    // else if(isPC(width)){
+    //     return <PCList data={data} type={DEVICE_TYPE.PC} />
+    // }
+    // return <PCList data={data} type={DEVICE_TYPE.OVER_PC} />
 
 }
 

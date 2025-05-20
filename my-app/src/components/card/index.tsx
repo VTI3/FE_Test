@@ -1,16 +1,13 @@
 import React, { useState } from "react";
+import {ICardProps} from '@/types'
 
-interface Iprops {
-    current:number;
-    length: number
-}
-
-const Card = (props: Iprops) => {
-    const {current, length} = props;
-
+// todo: 样式
+const Card = (props: ICardProps) => {
+    const {text, image} = props;
 
     return <div>
-        todo: Card
+        <p>{text}</p>
+        <img src={image} />
     </div>
 
 }

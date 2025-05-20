@@ -5,14 +5,15 @@ import React, { useState, useEffect } from "react";
 import {DEVICE_TYPE} from '@/constants/device'
 import Card from '@/components/card'
 import Slider from '@/components/slider'
+import {ICardProps} from '@/types'
 import styles from "./page.module.css";
 
-interface Iprops<T> {
-    data: Array<T>
+interface Iprops {
+    data: Array<ICardProps>
     type: DEVICE_TYPE
 }
 
-const MobileList = <T,>(props: Iprops<T>) => {
+const MobileList = (props: Iprops) => {
     const {data,type} = props;
     const [focusedCardIndex, setFocusedCardIndex] = useState(0)
     const [touchStart, setTouchStart] = useState(0)
