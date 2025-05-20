@@ -14,13 +14,14 @@ import {useWindowSize} from '@/hooks/use-window-size'
 import {DEVICE_TYPE} from '@/constants/device'
 import { isMobile, isIpad, isPC } from '@/utils/device';
 import MobileList from './mobile-list'
+import {ICardProps} from '@/types'
 import PCList from './pc-list';
 
-interface Iprops<T> {
-    data: Array<T>
+interface Iprops {
+    data: Array<ICardProps>
 }
 
-const CardList = <T,>(props: Iprops<T>) => {
+const CardList =(props: Iprops) => {
     const {data} = props;
     // 获取当前窗口大小hooks
     const {width} = useWindowSize();
@@ -32,11 +33,10 @@ const CardList = <T,>(props: Iprops<T>) => {
     }else if(isIpad(width)){
         return <MobileList data={data} type={DEVICE_TYPE.IPAD} />
     }
-    return null
-    // else if(isPC(width)){
-    //     return <PCList data={data} type={DEVICE_TYPE.PC} />
-    // }
-    // return <PCList data={data} type={DEVICE_TYPE.OVER_PC} />
+    else if(isPC(width)){
+        return <PCList data={data} type={DEVICE_TYPE.PC} />
+    }
+    return <PCList data={data} type={DEVICE_TYPE.OVER_PC} />
 
 }
 

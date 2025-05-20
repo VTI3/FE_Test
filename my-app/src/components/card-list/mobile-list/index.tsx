@@ -49,7 +49,7 @@ const MobileList = (props: Iprops) => {
         }
     }, [touchStart, data.length])
 
-    return <div className={type === DEVICE_TYPE.PHONE ? styles.phone : styles.ipad}>
+    return <div className={`${styles.base} ${type === DEVICE_TYPE.PHONE ? styles.phone : styles.ipad}`}>
         <Card data={data[focusedCardIndex]} /> 
         <Slider current={focusedCardIndex} length={data.length} />
     </div>
