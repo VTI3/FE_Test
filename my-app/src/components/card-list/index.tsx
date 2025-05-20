@@ -8,6 +8,9 @@
  * mobile： 展示一个，居中，页面边距x
  * ipad：同上，card大小不变，页面边距y
  * pc：并排展示3个，如窗口>1024，容器居中显示，保持1024宽度
+ * 
+ * 
+ * todo: 组件根据viewSize dynamic import
  */
 
 import {useWindowSize} from '@/hooks/use-window-size'
@@ -25,7 +28,6 @@ const CardList =(props: Iprops) => {
     const {data} = props;
     // 获取当前窗口大小hooks
     const {width} = useWindowSize();
-    console.debug('width',width)
     if(!data?.length) return null
     
     if(isMobile(width)){
