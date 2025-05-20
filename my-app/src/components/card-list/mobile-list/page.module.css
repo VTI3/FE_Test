@@ -1,0 +1,11 @@
+.base{
+  display: flex;
+  align-items: center;
+}
+/* todo: 补充对应的 margin */
+.phone {
+    border: solid red
+}
+.ipad{
+  border: solid blue;
+}
