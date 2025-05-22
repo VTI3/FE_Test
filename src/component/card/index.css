@@ -1,0 +1,23 @@
+.card {
+  position: relative;
+  padding: 24px;
+  width: 216px;
+  height: 293px;
+  color: var(--c-text-color);
+  background: var(--c-bg-color);
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  border-radius: var(--c-normal-raidus);
+  padding: 20px;
+}
+
+.card-logo {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  width: 70px;
+  height: 66px;
+}
